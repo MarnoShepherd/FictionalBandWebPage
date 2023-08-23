@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head><link rel="stylesheet" type="text/css" href="{% static 'css/accounts/register.css' %}">
+</head>
+
+<div class="row form-card">
+    <h1 class="heading">Register</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{form.username}}
+        </div>
+        <div class="mb-3">
+            {{form.email}}
+        </div>
+        <div class="mb-3">
+            {{form.password1}}
+        </div>
+        <div class="mb-3">
+            {{form.password2}}
+        </div>    
+        <button type="submit">Sign Up</button>
+    </form>
+    </br>
+    <a href="login_user" class="btn-link">Already registered? Log In</a>
+</div>
+{% endblock content %}

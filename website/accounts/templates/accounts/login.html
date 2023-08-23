@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/accounts/login.css' %}">
+</head>
+<form action="" method=POST>
+    {% csrf_token %}
+<div class="row form-card">
+    <h1 class="heading">Log In</h1>
+    <div class="fields">
+        <input type="text" class="form-control" name="username" placeholder="Username">
+      </div>
+    </br>
+      <div class="fields">
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+    </br>
+        <button type="submit" class="btn">Log In</button>
+    </br>
+    <a href="signup" class="btn-link">Not Registered? Sign Up</a>
+    <a href="{% url 'password_reset' %}" class="btn-link">Forgot password?</a>
+    </br>
+</div>
+</form>
+{% endblock content %}

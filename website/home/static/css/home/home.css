@@ -1,0 +1,163 @@
+/* Reset default margin and padding */
+p, ul, li, address {
+    margin: 0;
+    padding: 0;
+}
+
+/* Center-align all content */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white; /* Change font color to white */
+}
+
+/* Add some spacing between sections */
+section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Style the contact section */
+address {
+    margin-top: 10px;
+}
+
+.hyperlink{
+    color: #4D4DFF;
+}
+
+.content{
+    color: #c2c2c2;
+}
+
+.content:hover{
+    color:white
+}
+
+/* Style the footer */
+footer {
+    background: rgba(0, 0, 0, 0.3);/* Background color for the footer */
+    color: white; /* Font color for the footer */
+    padding: 20px 0; /* Add padding for spacing */
+    text-align: center;
+    width: 100%; /* Make the footer span the entire width */
+    position: absolute; /* Position the footer at the bottom */
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.451);
+}
+
+/* === removing default button style ===*/
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  /* button styling */
+  .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --animation-color: #4D4DFF;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  
+  /* this is the text, when you hover on button */
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  
+  /* Animation */
+  @keyframes headerEffect {
+    0%, 100% {
+      width: 100%;
+    }
+    50% {
+      width: 0%;
+    }
+  }
+  
+  /* Apply animation to hover-text */
+  .button .hover-text {
+    animation: headerEffect 5s infinite;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+  }
+
+  /* === removing default button style ===*/
+.button2 {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  /* button styling */
+  .button2 {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --animation-color: #4D4DFF;
+    --fs-size: 1em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  
+  /* this is the text, when you hover on button */
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  
+  /* Animation */
+  @keyframes headerEffect {
+    0%, 100% {
+      width: 100%;
+    }
+    50% {
+      width: 0%;
+    }
+  }
+  
+  /* Apply animation to hover-text */
+  .button2 .hover-text {
+    animation: headerEffect 5s infinite;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+  }
+  

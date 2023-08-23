@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Nebula</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home/home.css' %}">
+</head>
+
+<body>
+    <section id="about">
+        <button data-text="Awesome" class="button">
+            <span class="actual-text">&nbsp;Welcome_to_the_world_of_Sonic_Nebula&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;Welcome_to_the_world_of_Sonic_Nebula&nbsp;</span>
+        </button>
+        <h2 class="heading">
+            
+        </br>
+            <p class="content">We are a mesmerizing rock band that transcends boundaries and takes you on a sonic journey like never before.
+            </p>
+            <p class="content">Our music blends electrifying guitar riffs, powerful vocals, and a unique blend of
+                genres
+                that will keep you hooked.</p>
+        </h2>
+
+    </section>
+
+    <section id="music">
+        <button data-text="Awesome" class="button2">
+            <span class="actual-text">&nbsp;Music&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;Music&nbsp;</span>
+        </button>
+        <p class="content">Head over to our songs page to check out some of our music.</p>
+    </section>
+
+    <section id="tour">
+        <button data-text="Awesome" class="button2">
+            <span class="actual-text">&nbsp;Tour.dates&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;Tour.dates&nbsp;</span>
+        </button>
+        <p class="content">Don't miss us on our upcoming tour dates:</p>
+        <ul>
+            <li class="content">Date: 01/09/2023, Location: Origin</li>
+            <li class="content">Date: 15/09/2023, Location: Bazique</li>
+            <li class="content">Date: 30/09/2023, Location: Up The Creek</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <button data-text="Awesome" class="button2">
+            <span class="actual-text">&nbsp;Contact&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;Contact&nbsp;</span>
+        </button>
+        <p class="content">Reach out to us:</p>
+        <address class="content">
+            Email: <a class="hyperlink" href="mailto:info@sonicnebula.com">info@sonicnebula.com</a><br>
+            Phone: +27 12 345 6478<br>
+            Follow us on <a class="hyperlink" href="https://www.instagram.com/sonicnebula">Instagram</a> and <a class="hyperlink"
+                href="https://www.twitter.com/sonicnebula">Twitter</a>.
+        </address>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Sonic Nebula. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+
+
+{% endblock %}
