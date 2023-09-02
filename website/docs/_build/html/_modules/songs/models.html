@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>songs.models &mdash; FictionalBandWebPage 00.00.01 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d7bb8d4d"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FictionalBandWebPage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#accounts">accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html#songs">songs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FictionalBandWebPage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">songs.models</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for songs.models</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">gettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+
+<div class="viewcode-block" id="Artist">
+<a class="viewcode-back" href="../../songs.html#songs.models.Artist">[docs]</a>
+<span class="k">class</span> <span class="nc">Artist</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Model representing an artist.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        artistName (CharField): The name of the artist.</span>
+<span class="sd">        created (DateTimeField): The date and time when the artist was created.</span>
+<span class="sd">        last_updated (DateTimeField): The date and time when the artist information was last updated.</span>
+
+<span class="sd">    Meta:</span>
+<span class="sd">        verbose_name (str): A human-readable name for the model, set to &quot;Artist&quot;.</span>
+<span class="sd">        verbose_name_plural (str): A human-readable name for the model in plural form, set to &quot;Artists&quot;.</span>
+
+<span class="sd">    Methods:</span>
+<span class="sd">        __str__(): Returns a string representation of the artist, which is the artist&#39;s name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">artistName</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Artist Name&quot;</span><span class="p">),</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Artist created date&quot;</span><span class="p">),</span> <span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">last_updated</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Artist created date&quot;</span><span class="p">),</span> <span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Artist&quot;</span><span class="p">)</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Artists&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Artist.__str__">
+<a class="viewcode-back" href="../../songs.html#songs.models.Artist.__str__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">artistName</span></div>
+</div>
+
+    
+
+<div class="viewcode-block" id="Album">
+<a class="viewcode-back" href="../../songs.html#songs.models.Album">[docs]</a>
+<span class="k">class</span> <span class="nc">Album</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Model representing an album.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        artist (ForeignKey): A foreign key relationship to the Artist model, representing the album&#39;s artist.</span>
+<span class="sd">        albumName (CharField): The name of the album.</span>
+<span class="sd">        created (DateTimeField): The date and time when the album was created.</span>
+<span class="sd">        last_updated (DateTimeField): The date and time when the album information was last updated.</span>
+
+<span class="sd">    Meta:</span>
+<span class="sd">        verbose_name (str): A human-readable name for the model, set to &quot;Album&quot;.</span>
+<span class="sd">        verbose_name_plural (str): A human-readable name for the model in plural form, set to &quot;Albums&quot;.</span>
+
+<span class="sd">    Methods:</span>
+<span class="sd">        __str__(): Returns a string representation of the album, which is the album&#39;s name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">artist</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;Artist&quot;</span><span class="p">,</span> <span class="n">verbose_name</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Artist Album&quot;</span><span class="p">),</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">albumName</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Album Name&quot;</span><span class="p">),</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Album created date&quot;</span><span class="p">),</span> <span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">last_updated</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Latest album update&quot;</span><span class="p">),</span> <span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Album&quot;</span><span class="p">)</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Albums&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Album.__str__">
+<a class="viewcode-back" href="../../songs.html#songs.models.Album.__str__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">albumName</span></div>
+</div>
+
+    
+
+<div class="viewcode-block" id="Song">
+<a class="viewcode-back" href="../../songs.html#songs.models.Song">[docs]</a>
+<span class="k">class</span> <span class="nc">Song</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Model representing a song.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        album (ForeignKey): A foreign key relationship to the Album model, representing the song&#39;s album.</span>
+<span class="sd">        songThumbnail (ImageField): An image field for the song&#39;s thumbnail with upload path &#39;thumbnail/&#39;.</span>
+<span class="sd">        song (FileField): A file field for the song with upload path &#39;music/&#39;.</span>
+<span class="sd">        songName (CharField): The name of the song.</span>
+<span class="sd">        created (DateTimeField): The date and time when the song was created.</span>
+<span class="sd">        last_updated (DateTimeField): The date and time when the song information was last updated.</span>
+
+<span class="sd">    Meta:</span>
+<span class="sd">        verbose_name (str): A human-readable name for the model, set to &quot;Song&quot;.</span>
+<span class="sd">        verbose_name_plural (str): A human-readable name for the model in plural form, set to &quot;Songs&quot;.</span>
+
+<span class="sd">    Methods:</span>
+<span class="sd">        __str__(): Returns a string representation of the song, which is the song&#39;s name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">album</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&quot;Album&quot;</span><span class="p">,</span> <span class="n">verbose_name</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Song Album&quot;</span><span class="p">),</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">songThumbnail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Song Thumbnail&quot;</span><span class="p">),</span> <span class="n">upload_to</span><span class="o">=</span><span class="s1">&#39;thumbnail/&#39;</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s2">&quot;.jpg, .png, .jpeg, .gif, .svg supported&quot;</span><span class="p">)</span>
+    <span class="n">song</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FileField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Song&quot;</span><span class="p">),</span> <span class="n">upload_to</span><span class="o">=</span><span class="s1">&#39;music/&#39;</span><span class="p">,</span> <span class="n">help_text</span><span class="o">=</span><span class="s2">&quot;.wav supported only&quot;</span><span class="p">)</span>
+    <span class="n">songName</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Song Name&quot;</span><span class="p">),</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Song created date&quot;</span><span class="p">),</span> <span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">last_updated</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Latest song update&quot;</span><span class="p">),</span> <span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Song&quot;</span><span class="p">)</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Songs&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Song.__str__">
+<a class="viewcode-back" href="../../songs.html#songs.models.Song.__str__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">songName</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Marno Shepherd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
